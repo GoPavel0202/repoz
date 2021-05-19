@@ -1,44 +1,40 @@
 #include <iostream>
 
-int main()
-{
-	printf("Привет мир\n");
-	std::cout<< "Привет мир C++"<< std::endl;
-	
-	return 0;
-}
+
+
+
 int main(int argc, const char** argv) {//
-	printf("4. Создать структуру данных <Поле для игры в крестики-нолики> и снабдить его всеми необходимыми (на Ваш взгляд) свойствами\n");
-enum rainbow {red=5, orange, yellow, green, lightblue, blue, violet};
-    using Rainbow = enum rainbow;
+//3.1
+extern const int a;
+extern const int b;
+extern const double c;
+extern const int d;
+double i =  a * (b + (c / d));
+std::cout << i << std::endl;
+//3.2
+int x = 25;
+const int s = 21;
+int f = x - s;
+std::cout << f << std::endl;
 
-    Rainbow currentCvetikSemicvetikLeaf = red;
-    //std::cout << currentCvetikSemicvetikLeaf << " ";
-struct cat {
-        int age;
-        int hairAmount;
-        char name[15]; //std::string
-        Rainbow color;
-        int isHungry : 1;
-        int isWalking : 1;
-    };
-    using Cat = struct cat;
-    Cat barsik;
-    barsik.age = 5;
-    barsik.hairAmount = 1000000;
-    barsik.color = yellow;
-    strcpy(barsik.name, "Barsik");
+int i5 = (x > s) ? (f * 2) : 0;
+std::cout << i5<< std::endl;
+//3.3
 
-    std::cout << barsik.color << " ";
-    std::cout << barsik.name << std::endl;
-
-    Cat murzik;
-    murzik.age = 5;
-    murzik.hairAmount = 1000000;
-    murzik.color = violet;
-    strcpy(murzik.name, "Murzik");
-    
-    std::cout << murzik.color << " ";
-    std::cout << murzik.name << std::endl;
+//3.4
+short field[3][3][3] = {};
+	field[0][0][0] = 1;
+	field[1][0][0] = 2;
+	field[2][0][0] = 3;
+	field[1][1][1] = 200;
+	short* e = &field[1][1][1];
+	
+	std::cout <<  field[0][0][0] << " ";
+	std::cout <<  field[1][0][0] << " ";
+	std::cout <<  field[2][0][0] << " ";
+	std::cout << field[1][1][1] << std::endl;
+	std::cout << * (field +1 +1 +1 ) << std::endl;
+	printf("%p\n", e);
+    printf("%d\n", *e);
 	return 0;
 }
